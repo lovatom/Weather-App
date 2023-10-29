@@ -5,7 +5,7 @@
     <title>Weather App</title>
     <link rel = "stylesheet" href = "style.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel = "icon" type = "image/x-icon" href="/images/favicon.ico">
+    <link rel = "icon" type = "image/x-icon" href="/public/images/favicon.ico">
 </head>
 <body>
     <div class = "card">
@@ -38,8 +38,8 @@
             </div>
         </div>
     </div>
-    <script>
-        const apiKey="c5fac561eab6f7270a7e4d6fa63ba8dd";
+    <script src = "../app.js">
+        const apiKey= process.env.OPEN_WEATHER_API_KEY;
         const apiUrl ="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
         const searchBox = document.querySelector(".search input")
