@@ -38,13 +38,24 @@
             </div>
         </div>
     </div>
-    <script src = "../app.js">
-        const apiKey= process.env.OPEN_WEATHER_API_KEY;
+    <script>
+        // const apiKey= process.env.OPEN_WEATHER_API_KEY;
+        fetch('/getWeather?city=YourCityName')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    // Process the data returned from your server
+  })
+  .catch(error => {
+    console.error('An error occurred', error);
+  });
         const apiUrl ="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
         const searchBox = document.querySelector(".search input")
         const searchBtn = document.querySelector(".search button")
         const weatherIcon = document.querySelector(".weather-icon")
+
+        console.log(apiKey)
 
         async function checkWeather(city){
             const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
